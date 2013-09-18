@@ -71,7 +71,7 @@ class JUnitXmlTestsListener(val outputDir:String) extends TestsListener
                     <testcase classname={name}
                               name={
                                 e.selector match {
-                                  case selector: TestSelector => selector.testName
+                                  case selector: TestSelector => selector.testName.split('.').last
                                   case _ => "(It is not a test)"
                                 }
                               }
